@@ -1,13 +1,35 @@
 ---
-- name: Sync drall
-  git:
-    repo=https://github.com/popstas/drall.git
-    dest=/usr/local/src/drall
-    version={{ drall_version }}
+- name: Install git and pip
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - git
+    - python-pip
   tags: drall
 
-- name: Install drall
-  command:
-    /usr/local/src/drall/install.sh -y
-    creates=/usr/share/drall
+- name: Install sh
+  pip:
+    name: sh
+    state: present
+  tags: drall
+
+- name: Sync drall
+  git:
+    repo: https://github.com/popstas/drall.git
+    dest: "{{ drall_install_path }}"
+    version: "{{ drall_version }}"
+  tags: drall
+
+- name: Create match-tests
+  file:
+    name: "{{ drall_install_path }}/match-tests"
+    state: directory
+  tags: drall
+
+- name: Create executable link
+  file:
+    src: "{{ drall_install_path }}/bin/drall"
+    path: /usr/local/bin/drall
+    state: link
   tags: drall
