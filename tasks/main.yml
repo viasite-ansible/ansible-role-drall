@@ -16,7 +16,7 @@
 
 - name: Sync drall
   git:
-    repo: https://github.com/popstas/drall.git
+    repo: https://github.com/viasite/drall.git
     dest: "{{ drall_install_path }}"
     version: "{{ drall_version }}"
   tags: drall

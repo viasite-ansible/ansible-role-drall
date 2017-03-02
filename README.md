@@ -1,2 +1,2 @@
 # ansible-role-drall
-Install [popstas/drall](https://github.com/popstas/drall).
+Install [viasite/drall](https://github.com/viasite/drall).

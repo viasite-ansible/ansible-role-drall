@@ -2,7 +2,7 @@
 galaxy_info:
   author: Stanislav Popov
   company: Viasite
-  description: Install popstas/drall
+  description: Install viasite/drall
   license: MIT
   min_ansible_version: 1.8
   platforms:
