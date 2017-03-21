@@ -1,4 +1,68 @@
 ---
 drall_version: v0.4.4
-drall_clone_path: /usr/local/src/drall
 drall_install_path: /usr/share/drall
+
+# TODO: matchers
+#drall_matchers:
+#  - name: clean_css
+#    group: update
+#    command: |
+#      if [ "$(drs module-enabled viasite_update)" = "1" ] && [ "$(drs vget viasite_update_modified_css)" != "1" ]; then
+#        echo 1
+#      fi
+#
+#  - name: clean_all
+#    group: update
+#    command: |
+#      if [ "$(drs module-enabled viasite_update)" = "1" ]; then
+#        variables="js css theme db core hooking"
+#        modified=0
+#        for variable in $variables; do
+#          value=$(drs vget viasite_update_modified_$variable 2>/dev/null || echo 0)
+#          modified=$(( modified + $value ))
+#        done
+#        if [ $modified = 0 ]; then
+#          echo 1
+#        fi
+#      fi
+#
+#  - name: all_complete
+#    group: engine
+#    command: |
+#      tests_dir="/usr/local/bin/drupal-tests"
+#      if [ -n "$($tests_dir/engine/school)" ] \
+#      || [ -n "$($tests_dir/engine/snormal)" ] \
+#      || [ -n "$($tests_dir/engine/visitkaplus)" ]
+#      then
+#        echo "1"
+#      fi
+#
+#  - name: school
+#    group: engine
+#    command: |
+#      if [ -d sites/all/themes/viasite_vplus ] \
+#      && [ ! -d sites/all/modules/commerce ] \
+#      && [ $(basename $PWD | grep "uoggo" | wc -l) = 1 ]
+#      then
+#        echo 1
+#      fi
+#
+#  - name: snormal
+#    group: engine
+#    command: |
+#      if [ -d sites/all/themes/viasite_vplus ] && [ -d sites/all/modules/commerce ]; then
+#        echo 1
+#      fi
+#
+#  - name: visitkaplus
+#    group: engine
+#    command: |
+#      if [ -d sites/all/themes/viasite_vplus ] \
+#      && [ ! -d sites/all/modules/commerce ] \
+#      && [ $(basename $PWD | grep "uoggo\|school" | wc -l) = 0 ]
+#      then
+#        echo 1
+#      fi
+#
+#  - name: cache
+#    command: drs vget cache
