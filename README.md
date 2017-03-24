@@ -2,3 +2,5 @@
 
 # ansible-role-drall
 Install [viasite/drall](https://github.com/viasite/drall).
+
+Requires [viasite-ansible.server-scripts](https://github.com/viasite-ansible/ansible-role-server-scripts)
