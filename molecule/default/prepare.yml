@@ -1,0 +1,6 @@
+---
+- name: Prepare
+  hosts: all
+  roles:
+    - viasite-ansible.server-scripts
+
