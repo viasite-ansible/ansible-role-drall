@@ -1,5 +1,5 @@
 ---
-drall_version: v0.4.4
+drall_version: master
 drall_install_path: /usr/share/drall
 
 # TODO: matchers
