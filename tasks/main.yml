@@ -12,6 +12,7 @@
   pip:
     name: sh
     state: present
+    executable: /usr/bin/pip3
   tags: drall
 
 - name: Sync drall
